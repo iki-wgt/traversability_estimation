@@ -3,7 +3,7 @@ services:
     container_name: traversability_estimation
     extends: 
       file: common.yaml
-      service: .common #.common_nvidia
+      service: .common_nvidia
     volumes:
       - ../world:/world
       - ../traversability_estimation/config:/root/ros2_ws/src/traversability_estimation/traversability_estimation/config
@@ -14,7 +14,7 @@ services:
     container_name: demo
     extends: 
       file: common.yaml
-      service: .common #.common_nvidia
+      service: .common_nvidia
     volumes:
       - ../world:/world
       - ../scripts:/scripts
