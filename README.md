@@ -1,6 +1,8 @@
 # Traversability Estimation
 A ROS2 package for estimating traversability on pointclouds and 3D path planning for ground robots.
 
+![](imgs/demo.gif)
+
 ![](imgs/mesh.png)
 
 ![](imgs/cloud.png)
@@ -14,17 +16,18 @@ docker compose -f docker/compose.yaml build
 # Running
 Use docker to run the package:
 ```bash
+xhost local:root
 docker compose -f docker/compose.yaml up
 ```
 
 If you have nvidia docker you can use:
 ```bash
+xhost local:root
 docker compose -f docker/compose_nvidia.yaml up
 ```
+The system takes a few secconds to estimate traversability and generate a graph.
 
-Starting it for the first time will take a few secconds because it has to generate the pointcloud (`world/world.pcd`).
-
-Now you have to restart it. Your terminal should look like this:
+Your terminal should look like this:
 
 ```bash
 traversability_estimation  | [traversability_estimation_node-1] [INFO] [1740550635.911924732] [traversability_estimation]: Point cloud conversion took: 132.354 ms
