@@ -42,5 +42,5 @@ traversability_estimation  | [graph_planning_node-2] [INFO] [1740550651.78393637
 traversability_estimation  | [graph_planning_node-2] [INFO] [1740550652.684279339] [graph_planning]: Graph built with 148472 nodes and 148452 edges.
 ```
 
-After the graph has been built, use the `Publish Point` button in RViz to select start and goal points.
+After the graph has been built, use the `Publish Point` button in RViz (at the top left) to select start and goal points.
 ![](imgs/button.png)
