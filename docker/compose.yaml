@@ -3,19 +3,12 @@ services:
     container_name: traversability_estimation
     extends: 
       file: common.yaml
-      service: .common #.common_nvidia
-    volumes:
-      - ../world:/world
-      - ../traversability_estimation/config:/root/ros2_ws/src/traversability_estimation/traversability_estimation/config
-      - ../traversability_estimation/launch:/root/ros2_ws/src/traversability_estimation/traversability_estimation/launch
+      service: .common
     command: ros2 launch traversability_estimation traversability_estimation.launch.py use_rviz:=true
 
   demo:
     container_name: demo
     extends: 
       file: common.yaml
-      service: .common #.common_nvidia
-    volumes:
-      - ../world:/world
-      - ../scripts:/scripts
+      service: .common
     command: python3 /scripts/main.py /world/world.stl
