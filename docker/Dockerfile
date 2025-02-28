@@ -42,3 +42,8 @@ WORKDIR ${ROS_WS}
 RUN source /opt/ros/$ROS_DISTRO/setup.bash \
     && colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release
 RUN echo "source ${ROS_WS}/install/setup.bash" >> /root/.bashrc
+
+# Generate demo point cloud
+COPY scripts /scripts
+COPY world /world
+RUN python3 /scripts/generate_cloud.py
